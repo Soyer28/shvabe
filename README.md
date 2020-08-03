@@ -8,6 +8,10 @@ https://medium.com/@xiaolishen/develop-in-docker-a-node-backend-and-a-react-fron
 
 `docker rmi $(docker images -q)` - delete img
 
+`docker-compose build` - build img
+
+`docker-compose up` - старт проекта
+
 ## Mission
 
 Сделать страницу авторизации (пользователи могут быть заранее созданы), чтобы
