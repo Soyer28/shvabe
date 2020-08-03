@@ -4,6 +4,10 @@ https://dev.to/macru/dockerizing-react-app-and-express-api-with-mongodb-2pdm
 
 https://medium.com/@xiaolishen/develop-in-docker-a-node-backend-and-a-react-front-end-talking-to-each-other-5c522156f634
 
+https://levelup.gitconnected.com/dockerizing-a-react-application-using-nginx-and-react-router-43154cc8e58c
+
+
+
 # Command
 
 `docker rmi $(docker images -q)` - delete img
