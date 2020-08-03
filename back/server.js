@@ -8,7 +8,7 @@ const cors = require("cors");
 const app = express();
 
 let corsOptions = {
-  origin: "http://localhost:8081"
+  origin: "http://localhost:70"
 };
 
 // (use) Уровни промежуточного ПО могут добавляться один за другим в нескольких вызовах use или даже всех последовательно с одним вызовом.

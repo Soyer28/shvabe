@@ -1,0 +1,96 @@
+version: "3"
+
+services:
+  api:
+    build: ./back
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    container_name: shvabe-api
+
+  client:
+    build: ./front
+    ports:
+      - "70:80"
+    container_name: shvabe-client
+
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+    container_name: shvabe-db
+
+
+#version: "3"
+#services:
+#  client:
+#    image: mhart/alpine-node:6.8.0
+#    restart: always
+#    ports:
+#      - "3000:3000"
+#    working_dir: /front/src/app
+#    volumes:
+#      - ./front:/front/src/app
+#    entrypoint: ["npm", "start"]
+#    links:
+#      - api
+#    networks:
+#      - webappnetwork
+#  api:
+#    image: webapp-api
+#    restart: always
+#    ports:
+#      - "9000:9000"
+#    volumes:
+#      - ./back:/back
+#      - /back/node_modules
+#    depends_on:
+#      - mongodb
+#    networks:
+#      - webappnetwork
+#  mongodb:
+#    image: mongo
+#    restart: always
+#    container_name: mongodb
+#    volumes:
+#      - ./data-node:/data/db
+#    ports:
+#      - 27017:27017
+#    command: mongod --noauth --smallfiles
+#    networks:
+#      - webappnetwork
+#networks:
+#  webappnetwork:
+#    driver: bridge
+
+#version: '3'
+#
+#services:
+#  server:
+#    build: ./back
+#      expose:
+#        - ${APP_SERVER_PORT}
+#      enviroment:
+#        API_HOST: ${API_HOST}
+#        APP_SERVER_PORT: ${APP_SERVER_PORT}
+#      ports:
+#        - ${APP_SERVER_PORT}:${APP_SERVER_PORT}
+#      volumes:
+#        - ./back/src:/app/shvabe-server/src
+#      command: node server.js
+#
+#  client:
+#    build: ./front
+#      enviroment:
+#        - REACT_APP_PORT=${REACT_APP_PORT}
+#      expose:
+#        - ${REACT_APP_PORT}
+#      ports:
+#        - ${REACT_APP_PORT}:${REACT_APP_PORT}
+#      volumes:
+#        - ./front/src:/app/shvabe-client/src
+#        - ./front/src:/app/shvabe-client/public
+#      links:
+#        - server
+#      command: npm run start
