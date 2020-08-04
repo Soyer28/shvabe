@@ -50,7 +50,7 @@ select nav body -> row
 
 add body `{
               "name": "ivan",
-              "password": "gay-nigger"
+              "password": "nigger"
           }`
 
 <hr>
